@@ -1,0 +1,189 @@
+/* Main Layout */
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #202123;
+  color: white;
+  padding: 15px;
+  overflow-y: auto; /* ✅ Scroll if content exceeds */
+}
+
+/* Chat Area */
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  width: 80%;
+  margin: auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+/* Chat Header */
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Chat Messages */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Message Wrapper */
+.message-wrapper {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Chat Bubbles */
+.message {
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 80%;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* User Message (Right Aligned) */
+.user-message {
+  background-color: #007bff;
+  color: white;
+  align-self: flex-end;
+}
+
+/* Bot Message (Left Aligned) */
+.bot-message {
+  background-color: #f1f1f1;
+  color: black;
+  align-self: flex-start;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+  font-size: 12px;
+  color: gray;
+  animation: blink 1s infinite;
+}
+
+/* Chat Input Box */
+.input-container {
+  display: flex;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Microphone Button */
+.mic-button {
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+/* Speak (TTS) Button */
+.speak-button {
+  margin-left: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #007bff;
+}
+
+.speak-button:hover {
+  color: #0056b3;
+}
+
+/* Share Chat Button */
+.share-button {
+  background: none;
+  border: none;
+  color: blue;
+  cursor: pointer;
+}
+
+/* Edit Chat Button */
+.edit-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: orange;
+}
+
+/* Send Button */
+.send-button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: #0056b3;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 80px; /* Collapse sidebar */
+  }
+  
+  .chat-container {
+    width: 100%;
+  }
+
+  .message-wrapper {
+    max-width: 100%;
+  }
+}
